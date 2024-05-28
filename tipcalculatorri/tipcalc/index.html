@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+    <title>Tip Calculator</title>
+</head>
+ <body>
+    <main id="container">
+        <h1> Tip Calculator </h1>
+    
+        <section>
+            <div class="bill">
+                <label for="yourBill">bill</label>
+                <input type="number" placeholder="Your bill" id="yourBill"  />
+            </div>
+                 <div class="space-between">
+                    <label for="tipInput">Select tip</label>
+                    <span id="tipPrecent"></span>
+                 </div>
+                 <div>
+                 <input type="range" value="0" id="tipInput" class="range" />
+                </div>
+                <div class="space-between">
+                    <span>Tip</span>
+                    <span id="tipvalue"></span>
+                </div>
+
+                <hr />
+
+                <div class="space-between Total">
+                <span>Total</span>
+                <span id="totalWithTip"></span>
+                
+                </div>
+                
+                
+
+                 </div>
+                 
+        </section>
+        <section>
+            <div>
+                <div class="space-between">
+                    <label for="splitinput">split</label>
+                    <span id="splitValue"></span>
+                </div>
+                <input type="range" min="1" max="10" value="1" id="splitinput" class="range"/>
+            </div>
+            <div class="space-between">
+                <span>Bill each</span>
+                <span id="Billeach"></span>
+            </div>
+            <div class="space-between">
+                <span>Tip each</span>
+                <span id="Tipeach"></span>
+            </div>
+        </section>
+    </main>
+    <script>
+        function formatMoney(value) {
+            console.log(value);
+
+            value = Math.ceil(value * 100) / 100;
+            console.log(value);
+
+            value = value.toFixed(2)
+            return "$" + value;
+        }
+        function formatsplit(value) {
+            if(value === 1) return value + "person";
+            return value + "people";
+        }
+        function update() {
+           let bill = Number(document.getElementById("yourBill").value)
+           let tipPrecent = document.getElementById("tipInput").value;
+           let split = document.getElementById("splitinput").value;
+        
+           let tipvalue = bill * (tipPrecent / 100)
+           let Tipeach = tipvalue / split;
+           let NewBillEach = (bill + tipvalue) / split;
+           
+            document.getElementById("tipPrecent").innerHTML = tipPrecent + "%";
+            document.getElementById('tipvalue'). innerHTML = formatMoney(tipvalue);
+            document.getElementById('totalWithTip'). innerHTML = formatMoney(bill + tipvalue);
+            document.getElementById('splitValue'). innerHTML = formatsplit(split);
+            document.getElementById('Billeach'). innerHTML = formatMoney(NewBillEach);
+            document.getElementById('Tipeach'). innerHTML = formatMoney(Tipeach);
+        }
+        let container = document.getElementById('container')
+        container.addEventListener('input', update)
+
+    </script>
+ </body>
+</html>
