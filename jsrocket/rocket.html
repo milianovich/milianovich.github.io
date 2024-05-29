@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="rocket.css">
+    <script type="text/javascript" src="rocket.js"></script>
+    <title>Rocket</title>
+</head>
+<body class="body-state1">
+ 
+    <div class="left">
+       
+        <div class="interface state1">
+            <h1>JS Rocket Launch</h1>
+            <a href="#" class="button" onclick="changeState(2);">Launch!</a>
+        </div>
+       
+        <div class="interface state2">
+            <h1 id="countdown">10</h1>
+            <a href="#" onclick="changeState(1);">lopeta</a>
+        </div>
+      
+        <div class="interface state3">
+            <h1>mene!</h1>
+        </div>
+      
+        <div class="interface state4">
+            <h1>vihdoin</h1>
+            <a href="#" class="button" onclick="changeState(1);">tee uudestaan!</a>
+        </div>
+        
+        <div class="interface state5">
+            <h1>voi ei :D</h1>
+            <a href="#" class="button" onclick="changeState(1);">yritä uusiks kaheli</a>
+        </div>
+    </div>
+   
+
+  
+    <div class="right">
+        <div class="ground"></div>
+        <div class="rocket">
+        <div class="nervous" id="nervous"></div>
+        <div class="cant-wait" id="cant-wait"></div>
+
+        </div>
+    </div>
+   
+</body>
+</html>
