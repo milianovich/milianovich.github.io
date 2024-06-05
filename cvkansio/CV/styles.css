@@ -1,3 +1,8 @@
+html {
+  font-family: "Roboto", sans-serif;
+  background-color: beige;
+  text-align: center;
+}
 a {
   color: #E618A4;
   font-family: fantasy;
@@ -22,7 +27,12 @@ font-family: cursive;
 
 li {
 
- font-style: italic;
+font-family: "Roboto", sans-serif;
  word-spacing: 2px;
+ 
+}
+
+.tieto {
+  background-color: rgb(180, 172, 172);
 }
 

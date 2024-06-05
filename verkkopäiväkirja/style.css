@@ -1,0 +1,25 @@
+body {
+    font-family: Arial, sans-serif;
+    
+}
+
+header {
+    font-weight: bold;
+}
+
+#diary-entry {
+    background-color: #3f912b;
+    padding: 40px;
+    border-radius: 10px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+}
+
+#diaryEntryForm {
+    background-color: #4ba8d3;
+    padding: 20px;
+    border-radius: 8px;
+}
+
+#diary-entries {
+    padding: 40px 0;
+}
